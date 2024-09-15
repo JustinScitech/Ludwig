@@ -1,8 +1,37 @@
+
+
+import os
+import time
 import mido
 
 # Map MIDI note numbers to note names
 NOTE_NAMES = ['C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#', 'A', 'A#', 'B']
 
+def get_midi_files(directory):
+	files_in_directory = os.listdir(directory)
+	midi_files = {file for file in files_in_directory if file.endswith('.midi') or file.endswith('.mid')}
+	return midi_files
+	
+def poll():
+	curr_dir = os.getcwd()
+	prev = get_midi_files(curr_dir) 
+	
+	while True:
+		curr = get_midi_files(curr_dir)			
+		new_files = curr - prev
+		if new_files:
+			for file in new_files:
+				print(f'{file} created')
+				notes_and_durations = parse_midi(file)
+				print("\nNotes and durations as tuples:")
+				for note_tuple in notes_and_durations:
+					print(note_tuple)
+
+			
+		prev = curr
+		
+		time.sleep(0.5)
+		
 def get_note_name(midi_note):
     """Convert MIDI note number to note name with octave."""
     note = NOTE_NAMES[midi_note % 12]  # Find the note name
@@ -39,12 +68,5 @@ def parse_midi(file_path):
                     notes_and_durations.append((note_name, duration))
 
     return notes_and_durations
-
-# Main function to call the parser
-if __name__ == "__main__":
-    midi_file = "output.mid"  # Replace with actual file
-    notes_and_durations = parse_midi(midi_file)
-    
-    print("\nNotes and durations as tuples:")
-    for note_tuple in notes_and_durations:
-        print(note_tuple)
+		
+poll()
