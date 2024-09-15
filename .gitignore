@@ -100,3 +100,4 @@ half_recs_img.png
 
 # output midi file
 output.mid
+output*.mid

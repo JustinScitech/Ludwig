@@ -9,13 +9,16 @@ from note import Note
 from random import randint
 import os, paramiko
 from midiutil.MidiFile import MIDIFile
+from dotenv import load_dotenv
 
-hostname = "123.456.7.89" # Raspberry Pi IP address
-port = 22
-username = 'pi'
-password = 'asdf'
-local_path = 'output.mid'
-remote_path = '/home/pi/output.mid'
+load_dotenv()  # take environment variables from .env.
+
+hostname = os.getenv('HOSTNAME')
+port = os.getenv('PORT')
+username = os.getenv('USERNAME')
+password = os.getenv('PASSWORD')
+local_path = os.getenv('LOCAL_PATH')
+remote_path = os.getenv('REMOTE_PATH') + str(randint(0, 99999999999)) +'.mid'
 
 staff_files = [
     "resources/template/staff2.png", 
