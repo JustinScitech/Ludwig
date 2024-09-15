@@ -48,7 +48,7 @@ root = tk.Tk()
 root.title('Ludwig')
 
 # Set window size
-root.geometry('600x500')
+root.geometry('900x600')
 root.resizable(False, False)
 
 # Set window icon (replace 'icon.ico' with your icon file)
@@ -69,13 +69,13 @@ except:
 
 # Create a frame to hold the content with transparent background
 content_frame = tk.Frame(root, bg='#ffffff')
-content_frame.pack(pady=30)
+content_frame.pack(pady=150)
 
 # Create and place a title label
 title_label = tk.Label(
     content_frame,
     text='Ludwig',
-    font=('Arial', 36, 'bold'),
+    font=('Arial', 60, 'bold'),
     bg='#ffffff',  # Match the background color
     fg='#333333'
 )
@@ -84,12 +84,13 @@ title_label.pack(pady=10)
 # Add the description label
 description_label = tk.Label(
     content_frame,
-    text='Ludwig is a tool that takes in a picture of sheet music as input and then plays the notes on a physical piano. Upload a picture to get started!',
-    font=('Arial', 14),
+    text='Ludwig is a tool that takes in a picture of sheet music as input and then plays the notes on a physical piano. Upload a picture of sheet music to get started!',
+    font=('Arial', 20),
     bg='#ffffff',
     fg='#555555',
-    wraplength=500,
-    justify='center'
+    wraplength=600,
+    justify='center',
+    
 )
 description_label.pack(pady=10)
 
@@ -98,7 +99,7 @@ select_button = tk.Button(
     content_frame,
     text='Select Image',
     command=select_image,
-    font=('Arial', 16),
+    font=('Arial', 20),
     bg='#4CAF50',
     fg='#000000',  # Changed from white to black
     activebackground='#45a049',
