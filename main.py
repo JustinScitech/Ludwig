@@ -257,7 +257,7 @@ if __name__ == "__main__":
         # pitch may not be defined, which causes a crash
         pass
     # And write it to disk.
-    binfile = open("output.mid", 'wb')
+    binfile = open(os.getenv('LOCAL_PATH'), 'wb')
     midi.writeFile(binfile)
     binfile.close()
     # open_file('output.mid')
