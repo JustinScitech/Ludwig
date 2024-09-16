@@ -16,4 +16,4 @@ Hardware: Raspberry Pi3 with a bunch of Servomotors and a servomotor module.
 
 ## The basic concept behind the thing is that once we get the MIDI, we convert them into signals that then assign the fingerings based on where the leftmost finger is on the piano keyboard. 
 
-Optimized/Built on musical sheet recognition model SheetVision
+Optimized/Built on musical sheet recognition model SheetVision with MidiUtil
