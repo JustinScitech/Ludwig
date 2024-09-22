@@ -3,7 +3,7 @@
 Ludwig is a robotic piano player that can first read sheet music then convert it into MIDI data that can then be played on the piano using physical motors with fingers.
 
 
-## Developing THE BEST robot that can play music for you!
+## Developing THE BEST robot that can play music for you
 Made by: Justin Lau, Jonathan Polina, Sanjay Ramesh, and Christian Aiello
 
 ### Check out our demo
